@@ -1,0 +1,19 @@
+{
+  "name": "learning_semantic_versioning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/issues"
+  },
+  "homepage": "https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning#readme"
+}
