@@ -1,3 +1,6 @@
+## 1.14.0 (2020-11-24 14:15:01 -0300)
+
+* [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#15](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/15))
 ## 1.13.0 (Tue Nov 24 04:57:23 2020 +0000 Tue Nov 24 01:57:06 2020 -0300)
 
 * [KTB-0014] Adicionando estratégia de atualizar o arquivo "CHANGELOG.md" (por "Leonardo Sarmento de Castro" em [#14](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/14))
