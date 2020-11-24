@@ -30,6 +30,15 @@ jobs:
     if: github.event.pull_request.merged == true # run only when a branch is merged on "release-candidate"
     runs-on: ubuntu-latest
     steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: release-candidate # checkout on "release-candidate" branch
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    - name: setup git config
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub action"
     - name: write last pull request info on CHANGELOG.md
       run: |
         readonly local semantic_version=$(git log -1 --pretty=format:"%s")
@@ -64,17 +73,6 @@ jobs:
 
 # git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1
 # curl https://api.github.com/repos/user_org/project/pulls/${pr} | grep title | cut -d'"' -f4
-
-# ```
-# ## {{número da versão bumpeada}} ({{data MMddyyyy}})
-
-# * {{número + descrição da task}} ({{autor do PR}} {{hyperlink com número do PR}})
-# ```
-# ```
-# ## 25.0.1 (October 22, 2020)
-
-# * [KTB-2222] Adicionar header na área do gestor (@leonardo.castro em #200)
-# ```
 
 # https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash
 # echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
