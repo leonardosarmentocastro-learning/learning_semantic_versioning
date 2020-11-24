@@ -1,3 +1,6 @@
+* [KTB-0013] Adicionando estratégia de atualizar o arquivo "CHANGELOG.md" (por @Leonardo Sarmento de Castro em [#13](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/13))
+
+## 1.12.0 (Tue Nov 24 04:52:44 2020 +0000 Tue Nov 24 01:52:27 2020 -0300)
 * (por @ em [#](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/))
 
 ## ()
