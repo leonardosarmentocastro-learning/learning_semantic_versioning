@@ -25,4 +25,58 @@ jobs:
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
-  # update-changelog:
+
+  update-changelog:
+    if: github.event.pull_request.merged == true # run only when a branch is merged on "release-candidate"
+    runs-on: ubuntu-latest
+    steps:
+    - name: write last pull request info on CHANGELOG.md
+      run: |
+        readonly local semantic_version=$(git log -1 --pretty=format:"%s")
+        echo "semantic_version: $semantic_version"
+
+        readonly local pr_merge_date=$(git log -2 --format=%cd)
+        echo "pr_merge_date: $pr_merge_date"
+
+        # https://devhints.io/git-log-format
+        # https://stackoverflow.com/questions/14093452/grep-only-the-first-match-and-stop
+        readonly local pr_title=$(git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1)
+        echo "pr_title: $pr_title"
+
+        readonly local pr_author=$(git log -2 --pretty=format:"%an" --grep="Merge pull request" | head -1)
+        echo "pr_author: $pr_author"
+
+        # https://stackoverflow.com/questions/43428293/git-log-pretty-format-grab-just-a-number-from-the-title
+        readonly local pr_number=$(git log -2 | grep -o '#[0-9]\+' | grep -o '[0-9]\+')
+        echo "pr_number: $pr_number"
+
+        echo '## $semantic_version ($pr_merge_date)' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+        echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+        echo '* $pr_title (por @$pr_author em #$pr_number)' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+
+        git add CHANGELOG.md
+        git commit -m "CHANGELOG.md"
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
+
+# git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1
+# curl https://api.github.com/repos/user_org/project/pulls/${pr} | grep title | cut -d'"' -f4
+
+# ```
+# ## {{número da versão bumpeada}} ({{data MMddyyyy}})
+
+# * {{número + descrição da task}} ({{autor do PR}} {{hyperlink com número do PR}})
+# ```
+# ```
+# ## 25.0.1 (October 22, 2020)
+
+# * [KTB-2222] Adicionar header na área do gestor (@leonardo.castro em #200)
+# ```
+
+# https://superuser.com/questions/246837/how-do-i-add-text-to-the-beginning-of-a-file-in-bash
+# echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+# echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+# echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
