@@ -71,7 +71,7 @@ jobs:
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        branch: ${{ github.ref }}
+        branch: release-candidate
 
 # git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1
 # curl https://api.github.com/repos/user_org/project/pulls/${pr} | grep title | cut -d'"' -f4
