@@ -41,29 +41,36 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub action"
-    - name: write last pull request info on CHANGELOG.md
+    - name: get last pull request info
+      id: get-pr-info
       run: |
-        readonly local semantic_version=$(git log -1 --pretty=format:"%s")
-        echo "semantic_version: $semantic_version"
+        # readonly local semantic_version=$(git log -1 --pretty=format:"%s")
+        # echo "semantic_version: $semantic_version"
+        echo '::set-output name=SEMANTIC_VERSION::$(git log -1 --pretty=format:"%s")'
 
-        readonly local pr_merge_date=$(git log -2 --format=%cd)
-        echo "pr_merge_date: $pr_merge_date"
+        # readonly local pr_merge_date=$(git log -2 --format=%cd)
+        # echo "pr_merge_date: $pr_merge_date"
+        echo '::set-output name=PR_MERGE_DATE::$(git log -2 --format=%cd)'
 
         # https://devhints.io/git-log-format
         # https://stackoverflow.com/questions/14093452/grep-only-the-first-match-and-stop
-        readonly local pr_title=$(git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1)
-        echo "pr_title: $pr_title"
+        # readonly local pr_title=$(git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1)
+        # echo "pr_title: $pr_title"
+        echo '::set-output name=PR_TITLE::$(git log -2 --grep="Merge pull request" --pretty=format:"%b" | head -1)'
 
-        readonly local pr_author=$(git log -2 --pretty=format:"%an" --grep="Merge pull request" | head -1)
-        echo "pr_author: $pr_author"
+        # readonly local pr_author=$(git log -2 --pretty=format:"%an" --grep="Merge pull request" | head -1)
+        # echo "pr_author: $pr_author"
+        echo '::set-output name=PR_AUTHOR::$(git log -2 --pretty=format:"%an" --grep="Merge pull request" | head -1)'
 
         # https://stackoverflow.com/questions/43428293/git-log-pretty-format-grab-just-a-number-from-the-title
-        readonly local pr_number=$(git log -2 | grep -o '#[0-9]\+' | grep -o '[0-9]\+')
-        echo "pr_number: $pr_number"
-
-        echo '## $semantic_version ($pr_merge_date)' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+        # readonly local pr_number=$(git log -2 | grep -o '#[0-9]\+' | grep -o '[0-9]\+')
+        # echo "pr_number: $pr_number"
+        echo "::set-output name=PR_NUMBER::$(git log -2 | grep -o '#[0-9]\+' | grep -o '[0-9]\+')"
+    - name: write last pull request info on CHANGELOG.md
+      run: |
+        echo '## {{ steps.get-pr-info.outputs.SEMANTIC_VERSION }} ({{ steps.get-pr-info.outputs.PR_MERGE_DATE }})' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
         echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
-        echo '* $pr_title (por @$pr_author em #$pr_number)' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+        echo '* {{ steps.get-pr-info.outputs.PR_TITLE }} (por @{{ steps.get-pr-info.outputs.PR_AUTHOR }} em [#{{ steps.get-pr-info.outputs.PR_NUMBER }}](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/{{ steps.get-pr-info.outputs.PR_NUMBER }}))' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
 
         git add CHANGELOG.md
         git commit -m "CHANGELOG.md"
