@@ -4,4 +4,4 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - uses: leonardosarmentocastro-learning/action-update-changelog@v1
+    - uses: leonardosarmentocastro-learning/action-update-changelog@latest
