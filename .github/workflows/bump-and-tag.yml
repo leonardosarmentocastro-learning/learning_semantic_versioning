@@ -2,13 +2,12 @@
 ### This workflow is responsible for:
 ### 1. semantic versioning our code
 ### 2. update the CHANGELOG.md file as commits reaches one of the following branches
-### though merging pull requests: "bugfix", "master" and "release-candidate".
+### though merging pull requests: "bugfix" and "release-candidate".
 #####
 on:
   pull_request:
     branches:
       - bugfix
-      - master
       - release-candidate
     types: [ closed ]
 
@@ -20,7 +19,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.ref }} # checkout on PR target branch ("bugfix", "master" or "release-candidate")
+        ref: ${{ github.ref }} # checkout on PR target branch ("bugfix" or "release-candidate")
         persist-credentials: false # otherwise, the token used is `GITHUB_TOKEN`, instead of your personal token
         fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
     - name: setup git config
@@ -40,11 +39,6 @@ jobs:
           echo "[debug] on branch 'bugfix': bumping patch version"
           npm version patch
         fi
-
-        # if [ "${{ github.ref }}" == "master" ]; then
-        #   echo "[debug] on branch 'master': bumping major version"
-        #   npm version major
-        # fi
     - name: update CHANGELOG.md file
       run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
     - name: push changes
