@@ -1,3 +1,7 @@
+## 5.3.1 (2020-12-02 18:04:03 -0300)
+
+* CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#33](https://github.com/quero-edu/melhor_escola/pull/33))
+
 ## Merge pull request #31 from leonardosarmentocastro-learning/release-candidate (2020-12-02 18:00:05 -0300)
 
 * Release candidate (por "Leonardo Sarmento de Castro" em [#31](https://github.com/quero-edu/melhor_escola/pull/31))
