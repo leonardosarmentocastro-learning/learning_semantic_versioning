@@ -1,3 +1,7 @@
+## 1.14.1 (2020-12-02 11:22:01 -0300)
+
+* PR Feature/17 (por "Leonardo Sarmento de Castro" em [#18](https://github.com/quero-edu/melhor_escola/pull/18))
+
 ## tag and deploy (2020-11-24 17:15:50 +0000)
 
 * [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#](https://github.com/quero-edu/melhor_escola/pull/))
