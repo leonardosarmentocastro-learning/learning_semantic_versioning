@@ -1,10 +1,14 @@
-## 6.0.1 (2020-12-02 17:43:40 -0300)
+## Merge pull request #31 from leonardosarmentocastro-learning/release-candidate (2020-12-02 18:00:05 -0300)
 
-* Merge pull request #28 from leonardosarmentocastro-learning/release-candidate (por "Leonardo Sarmento de Castro" em [#29 28](https://github.com/quero-edu/melhor_escola/pull/29 28))
+* Release candidate (por "Leonardo Sarmento de Castro" em [#31](https://github.com/quero-edu/melhor_escola/pull/31))
 
-## 6.0.0 (2020-12-02 17:41:59 -0300)
+## 5.3.0 (2020-12-02 17:55:47 -0300)
 
-* Release candidate (por "Leonardo Sarmento de Castro" em [#28](https://github.com/quero-edu/melhor_escola/pull/28))
+* bump-and-tag.yml (por "Leonardo Sarmento de Castro" em [#32](https://github.com/quero-edu/melhor_escola/pull/32))
+
+## 5.2.0 (2020-12-02 17:50:55 -0300)
+
+* sync-branches.yml (por "Leonardo Sarmento de Castro" em [#30](https://github.com/quero-edu/melhor_escola/pull/30))
 
 ## 5.1.0 (2020-12-02 17:40:06 -0300)
 

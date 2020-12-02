@@ -41,10 +41,10 @@ jobs:
           npm version patch
         fi
 
-        if [ "${{ github.ref }}" == "master" ]; then
-          echo "[debug] on branch 'master': bumping major version"
-          npm version major
-        fi
+        # if [ "${{ github.ref }}" == "master" ]; then
+        #   echo "[debug] on branch 'master': bumping major version"
+        #   npm version major
+        # fi
     - name: update CHANGELOG.md file
       run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
     - name: push changes
