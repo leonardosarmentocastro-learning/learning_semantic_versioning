@@ -4,7 +4,7 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-     - uses: actions/checkout@v2
+    - uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }} # checkout on actual branch
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
