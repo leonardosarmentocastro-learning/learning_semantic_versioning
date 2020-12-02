@@ -1,3 +1,7 @@
+## 3.0.0 (2020-12-02 15:48:57 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#24](https://github.com/quero-edu/melhor_escola/pull/24))
+
 
 ## 2.0.2 (2020-12-02 15:41:12 -0300)
 
