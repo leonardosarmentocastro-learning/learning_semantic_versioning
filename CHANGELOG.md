@@ -1,3 +1,4 @@
+
 ## 2.0.2 (2020-12-02 15:41:12 -0300)
 
 * (por "" em [#23](https://github.com/quero-edu/melhor_escola/pull/23))
