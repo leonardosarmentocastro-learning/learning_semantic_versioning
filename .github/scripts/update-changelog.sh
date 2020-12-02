@@ -1,6 +1,12 @@
-### This script is responsible for fetching small chunks of information from "git log" instruction,
-### and formatting it cohesive lines which will be added to the beginning of "CHANGELOG.md" file.
+#####
+### This script is responsible for:
+### 1. fetching small chunks of information from "git log" instruction;
+### 2. formatting it as a markdown (".md" extension);
+### 3. add it to the beginning of "CHANGELOG.md" file;
+### 4. stage changes to be commited.
+#####
 
+### 1. fetching small chunks of information from "git log" instruction;
 readonly local SEMANTIC_VERSION=$(git log -1 --pretty=format:"%s")
 echo "[debug] SEMANTIC_VERSION: $SEMANTIC_VERSION"
 
@@ -19,12 +25,15 @@ echo "[debug] PR_AUTHOR: $PR_AUTHOR"
 readonly local PR_NUMBER=$(git log -2 | grep -o '#[0-9]\+' | grep -o '[0-9]\+')
 echo "[debug] PR_NUMBER: $PR_NUMBER"
 
-# Add content to the beginning of "CHANGELOG.md" file.
+### 2. formatting it as a markdown (".md" extension);
+### 3. add it to the beginning of "CHANGELOG.md" file.
 # NOTE: Every special character must be back-slashed (escaped).
-echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+# e.g. "http://" -> "http\:\/\/"
+echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md # empty line
 echo \* $PR_TITLE \(por \"$PR_AUTHOR\" em \[\#$PR_NUMBER\]\(https\:\/\/github.com\/quero\-edu/melhor\_escola/pull\/$PR_NUMBER\)\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
-echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md # empty line
 echo \#\# $SEMANTIC_VERSION \($PR_MERGE_DATE\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
 
+### 4. stage changes to be commited
 git add CHANGELOG.md
 git commit -m "CHANGELOG.md"

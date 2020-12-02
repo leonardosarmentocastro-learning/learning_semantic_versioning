@@ -1,6 +1,9 @@
-### This workflow is responsible for semantic versioning our code
-### and update the CHANGELOG.md file as it reaches one of the
-### following branches: "bugfix", "master" and "release-candidate".
+#####
+### This workflow is responsible for:
+### 1. semantic versioning our code
+### 2. update the CHANGELOG.md file as commits reaches one of the following branches
+### though merging pull requests: "bugfix", "master" and "release-candidate".
+#####
 on:
   pull_request:
     branches:
@@ -10,16 +13,16 @@ on:
     types: [ closed ]
 
 jobs:
-  tag-and-update-changelog:
+  bump-and-tag:
     # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
-    if: github.event.pull_request.merged == true # run only when a branch is merged on "release-candidate"
+    if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.ref }} # checkout on PR base branch ("release-candidate" or "bugfix")
-        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
-        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+        ref: ${{ github.ref }} # checkout on PR base branch ("bugfix", "master", "release-candidate")
+        persist-credentials: false # otherwise, the token used is `GITHUB_TOKEN`, instead of your personal token
+        fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
     - name: setup git config
       run: |
         git config --local user.email "action@github.com"
