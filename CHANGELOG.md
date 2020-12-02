@@ -1,3 +1,7 @@
+## 6.0.1 (2020-12-02 17:43:40 -0300)
+
+* Merge pull request #28 from leonardosarmentocastro-learning/release-candidate (por "Leonardo Sarmento de Castro" em [#29 28](https://github.com/quero-edu/melhor_escola/pull/29 28))
+
 ## 6.0.0 (2020-12-02 17:41:59 -0300)
 
 * Release candidate (por "Leonardo Sarmento de Castro" em [#28](https://github.com/quero-edu/melhor_escola/pull/28))
