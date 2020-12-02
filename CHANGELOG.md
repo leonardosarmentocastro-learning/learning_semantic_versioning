@@ -1,3 +1,7 @@
+## 5.0.0 (2020-12-02 17:28:33 -0300)
+
+* PR sync-branches.yml (por "Leonardo Sarmento de Castro" em [#26](https://github.com/quero-edu/melhor_escola/pull/26))
+
 ## 4.0.0 (2020-12-02 16:00:01 -0300)
 
 * PR sync-branches (por "Leonardo Sarmento de Castro" em [#25](https://github.com/quero-edu/melhor_escola/pull/25))
