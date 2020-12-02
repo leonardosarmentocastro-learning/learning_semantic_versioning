@@ -1,8 +1,12 @@
+### This workflow is responsible for semantic versioning our code
+### and update the CHANGELOG.md file as it reaches one of the
+### following branches: "bugfix", "master" and "release-candidate".
 on:
   pull_request:
     branches:
-      - release-candidate
       - bugfix
+      - master
+      - release-candidate
     types: [ closed ]
 
 jobs:
@@ -23,12 +27,20 @@ jobs:
     - name: bump version on "package.json"
       run: |
         echo "[debug] github ref: ${{ github.ref }}"
-        if [ "${{ github.ref }}" == "refs/heads/release-candidate" ]; then
-          echo "[debug] bumping minor version"
+
+        if [ "${{ github.ref }}" == "release-candidate" ]; then
+          echo "[debug] on branch 'release-candidate': bumping minor version"
           npm version minor
-        else
-          echo "[debug] bumping patch version"
+        fi
+
+        if [ "${{ github.ref }}" == "bugfix" ]; then
+          echo "[debug] on branch 'bugfix': bumping patch version"
           npm version patch
+        fi
+
+        if [ "${{ github.ref }}" == "master" ]; then
+          echo "[debug] on branch 'master': bumping major version"
+          npm version major
         fi
     - name: update CHANGELOG.md file
       run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
