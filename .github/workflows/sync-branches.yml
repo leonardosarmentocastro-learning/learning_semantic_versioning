@@ -20,41 +20,18 @@ jobs:
         echo "[debug] base branch is '${{ github.event.pull_request.head.ref }}'"
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.base_ref }} # checkout on PR base branch ("bugfix", "master", "release-candidate")
+        ref: ${{ github.base_ref }} # checkout on PR base branch ("master")
     # TODO: use "if" to create a PR to destination branch:
     # "rc -> master -> bugfix" or "bugfix -> master -> rc"
-    # - name: pull-request
-    #   uses: repo-sync/pull-request@v2
-    #   with:
-    #     destination_branch: "main"
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-
-    # - name: setup git config
-    #   run: |
-    #     git config --local user.email "action@github.com"
-    #     git config --local user.name "GitHub action"
-    # - name: bump version on "package.json"
-    #   run: |
-    #     echo "[debug] github ref: ${{ github.ref }}"
-
-    #     if [ "${{ github.ref }}" == "release-candidate" ]; then
-    #       echo "[debug] on branch 'release-candidate': bumping minor version"
-    #       npm version minor
-    #     fi
-
-    #     if [ "${{ github.ref }}" == "bugfix" ]; then
-    #       echo "[debug] on branch 'bugfix': bumping patch version"
-    #       npm version patch
-    #     fi
-
-    #     if [ "${{ github.ref }}" == "master" ]; then
-    #       echo "[debug] on branch 'master': bumping major version"
-    #       npm version major
-    #     fi
-    # - name: update CHANGELOG.md file
-    #   run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
-    # - name: push changes
-    #   uses: ad-m/github-push-action@master
-    #   with:
-    #     github_token: ${{ secrets.GITHUB_TOKEN }}
-    #     branch: ${{ github.ref }}
+    - name: syncing bugfix -> master -> rc
+      uses: repo-sync/pull-request@v2
+      if: ${{ github.event.pull_request.head.ref == 'bugfix' }}
+      with:
+        destination_branch: "release-candidate"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: syncing release-candidate -> master -> bugfix
+      uses: repo-sync/pull-request@v2
+      if: ${{ github.event.pull_request.head.ref == 'release-candidate' }}
+      with:
+        destination_branch: "bugfix"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
