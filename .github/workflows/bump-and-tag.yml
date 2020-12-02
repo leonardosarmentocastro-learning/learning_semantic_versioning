@@ -20,7 +20,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: ${{ github.ref }} # checkout on PR base branch ("bugfix", "master", "release-candidate")
+        ref: ${{ github.ref }} # checkout on PR target branch ("bugfix", "master" or "release-candidate")
         persist-credentials: false # otherwise, the token used is `GITHUB_TOKEN`, instead of your personal token
         fetch-depth: 0 # otherwise, you will fail to push refs to dest repo
     - name: setup git config

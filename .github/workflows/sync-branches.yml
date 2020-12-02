@@ -1,0 +1,60 @@
+on:
+  pull_request:
+    branches:
+      - master
+    types: [ closed ]
+
+# https://github.com/marketplace/actions/github-pull-request-action
+# master -> bugfix  -> bugfix-123 -> bugfix -> master -> rc
+# master -> rc      -> rc-123     -> rc     -> master -> bugfix
+
+jobs:
+  sync-branches:
+    # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
+    if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
+    runs-on: ubuntu-latest
+    steps:
+    - name: debugging
+      run: |
+        echo "[debug] ref branch is '${{ github.ref }}'"
+        echo "[debug] base branch is '${{ github.base_ref }}'"
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.base_ref }} # checkout on PR base branch ("bugfix", "master", "release-candidate")
+    # TODO: use "if" to create a PR to destination branch:
+    # "rc -> master -> bugfix" or "bugfix -> master -> rc"
+    - name: pull-request
+      uses: repo-sync/pull-request@v2
+      with:
+        destination_branch: "main"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    # - name: setup git config
+    #   run: |
+    #     git config --local user.email "action@github.com"
+    #     git config --local user.name "GitHub action"
+    # - name: bump version on "package.json"
+    #   run: |
+    #     echo "[debug] github ref: ${{ github.ref }}"
+
+    #     if [ "${{ github.ref }}" == "release-candidate" ]; then
+    #       echo "[debug] on branch 'release-candidate': bumping minor version"
+    #       npm version minor
+    #     fi
+
+    #     if [ "${{ github.ref }}" == "bugfix" ]; then
+    #       echo "[debug] on branch 'bugfix': bumping patch version"
+    #       npm version patch
+    #     fi
+
+    #     if [ "${{ github.ref }}" == "master" ]; then
+    #       echo "[debug] on branch 'master': bumping major version"
+    #       npm version major
+    #     fi
+    # - name: update CHANGELOG.md file
+    #   run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
+    # - name: push changes
+    #   uses: ad-m/github-push-action@master
+    #   with:
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
+    #     branch: ${{ github.ref }}
