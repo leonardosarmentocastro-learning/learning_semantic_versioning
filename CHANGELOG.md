@@ -1,3 +1,28 @@
+## 5.0.0 (2020-12-02 17:28:33 -0300)
+
+* PR sync-branches.yml (por "Leonardo Sarmento de Castro" em [#26](https://github.com/quero-edu/melhor_escola/pull/26))
+
+## 4.0.0 (2020-12-02 16:00:01 -0300)
+
+* PR sync-branches (por "Leonardo Sarmento de Castro" em [#25](https://github.com/quero-edu/melhor_escola/pull/25))
+
+## 3.0.0 (2020-12-02 15:48:57 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#24](https://github.com/quero-edu/melhor_escola/pull/24))
+
+
+## 2.0.2 (2020-12-02 15:41:12 -0300)
+
+* (por "" em [#23](https://github.com/quero-edu/melhor_escola/pull/23))
+
+## 2.0.1 (2020-12-02 12:41:50 -0300)
+
+* (por "" em [#22 21](https://github.com/quero-edu/melhor_escola/pull/22 21))
+
+## 2.0.0 (2020-12-02 12:09:16 -0300)
+
+* (por "" em [#21](https://github.com/quero-edu/melhor_escola/pull/21))
+
 ## 1.15.0 (2020-12-02 12:00:16 -0300)
 
 * [PR] Feature/19 (por "Leonardo Sarmento de Castro" em [#20](https://github.com/quero-edu/melhor_escola/pull/20))

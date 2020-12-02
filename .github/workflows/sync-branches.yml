@@ -1,0 +1,37 @@
+on:
+  pull_request:
+    branches:
+      - master
+    types: [ closed ]
+
+# https://github.com/marketplace/actions/github-pull-request-action
+# master -> bugfix  -> bugfix-123 -> bugfix -> master -> rc
+# master -> rc      -> rc-123     -> rc     -> master -> bugfix
+
+jobs:
+  sync-branches:
+    # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
+    if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
+    runs-on: ubuntu-latest
+    steps:
+    - name: debugging
+      run: |
+        echo "[debug] ref branch is '${{ github.ref }}'"
+        echo "[debug] base branch is '${{ github.event.pull_request.head.ref }}'"
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.base_ref }} # checkout on PR base branch ("master")
+    # TODO: use "if" to create a PR to destination branch:
+    # "rc -> master -> bugfix" or "bugfix -> master -> rc"
+    - name: syncing bugfix -> master -> rc
+      uses: repo-sync/pull-request@v2
+      if: ${{ github.event.pull_request.head.ref == 'bugfix' }}
+      with:
+        destination_branch: "release-candidate"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+    - name: syncing release-candidate -> master -> bugfix
+      uses: repo-sync/pull-request@v2
+      if: ${{ github.event.pull_request.head.ref == 'release-candidate' }}
+      with:
+        destination_branch: "bugfix"
+        github_token: ${{ secrets.GITHUB_TOKEN }}
