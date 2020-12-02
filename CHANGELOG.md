@@ -1,3 +1,7 @@
+## 5.1.0 (2020-12-02 17:40:06 -0300)
+
+* CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#27](https://github.com/quero-edu/melhor_escola/pull/27))
+
 ## 5.0.0 (2020-12-02 17:28:33 -0300)
 
 * PR sync-branches.yml (por "Leonardo Sarmento de Castro" em [#26](https://github.com/quero-edu/melhor_escola/pull/26))
