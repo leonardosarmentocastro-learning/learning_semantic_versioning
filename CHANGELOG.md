@@ -1,3 +1,7 @@
+## 5.4.0 (2020-12-02 18:18:06 -0300)
+
+* Merge pull request #35 from leonardosarmentocastro-learning/bugfix (por "Leonardo Sarmento de Castro" em [#36 35](https://github.com/quero-edu/melhor_escola/pull/36 35))
+
 ## 5.3.2 (2020-12-02 18:09:38 -0300)
 
 * PR - bugfix 100 (por "Leonardo Sarmento de Castro" em [#34](https://github.com/quero-edu/melhor_escola/pull/34))
