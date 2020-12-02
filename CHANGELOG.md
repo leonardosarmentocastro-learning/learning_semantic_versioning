@@ -1,3 +1,14 @@
+## tag and deploy (2020-11-24 17:15:50 +0000)
+
+* [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#](https://github.com/quero-edu/melhor_escola/pull/))
+
+
+## tag and deploy (2020-11-24 17:15:50 +0000)
+
+* [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#](https://github.com/quero-edu/melhor_escola/pull/))
+## tag and deploy (2020-11-24 17:15:50 +0000)
+
+* [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#](https://github.com/quero-edu/melhor_escola/pull/))
 ## 1.14.0 (2020-11-24 14:15:01 -0300)
 
 * [KTB-0015] Alterar o console.log (por "Leonardo Sarmento de Castro" em [#15](https://github.com/leonardosarmentocastro-learning/learning_semantic_versioning/pull/15))

@@ -20,8 +20,10 @@ jobs:
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub action"
-    - name: bump minor version on "package.json"
+    - name: bump version on "package.json"
       run: |
+        echo "[debug] github ref: ${{ github.ref }}"
+
         if [ "${{ github.ref }}" == "refs/heads/release-candidate" ]; then
           npm version minor
         else
@@ -29,7 +31,7 @@ jobs:
         fi
     - name: update CHANGELOG.md file
       id: get-pr-info
-      run: chmod +x ../scripts/update-changelog.sh && ./../scripts/update-changelog.sh
+      run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
     - name: push changes
       uses: ad-m/github-push-action@master
       with:
