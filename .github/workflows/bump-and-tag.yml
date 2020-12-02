@@ -1,0 +1,51 @@
+### This workflow is responsible for semantic versioning our code
+### and update the CHANGELOG.md file as it reaches one of the
+### following branches: "bugfix", "master" and "release-candidate".
+on:
+  pull_request:
+    branches:
+      - bugfix
+      - master
+      - release-candidate
+    types: [ closed ]
+
+jobs:
+  tag-and-update-changelog:
+    # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
+    if: github.event.pull_request.merged == true # run only when a branch is merged on "release-candidate"
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }} # checkout on PR base branch ("release-candidate" or "bugfix")
+        persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+        fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
+    - name: setup git config
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub action"
+    - name: bump version on "package.json"
+      run: |
+        echo "[debug] github ref: ${{ github.ref }}"
+
+        if [ "${{ github.ref }}" == "release-candidate" ]; then
+          echo "[debug] on branch 'release-candidate': bumping minor version"
+          npm version minor
+        fi
+
+        if [ "${{ github.ref }}" == "bugfix" ]; then
+          echo "[debug] on branch 'bugfix': bumping patch version"
+          npm version patch
+        fi
+
+        if [ "${{ github.ref }}" == "master" ]; then
+          echo "[debug] on branch 'master': bumping major version"
+          npm version major
+        fi
+    - name: update CHANGELOG.md file
+      run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
+    - name: push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: ${{ github.ref }}
