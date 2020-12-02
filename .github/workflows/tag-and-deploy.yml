@@ -13,7 +13,7 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       with:
-        ref: release-candidate # checkout on "release-candidate" branch
+        ref: ${{ github.ref }} # checkout on PR base branch ("release-candidate" or "bugfix")
         persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
         fetch-depth: 0 # otherwise, you will failed to push refs to dest repo
     - name: setup git config
@@ -23,14 +23,14 @@ jobs:
     - name: bump version on "package.json"
       run: |
         echo "[debug] github ref: ${{ github.ref }}"
-
         if [ "${{ github.ref }}" == "refs/heads/release-candidate" ]; then
+          echo "[debug] bumping minor version"
           npm version minor
         else
+          echo "[debug] bumping patch version"
           npm version patch
         fi
     - name: update CHANGELOG.md file
-      id: get-pr-info
       run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
     - name: push changes
       uses: ad-m/github-push-action@master
