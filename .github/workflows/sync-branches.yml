@@ -21,8 +21,6 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.base_ref }} # checkout on PR base branch ("master")
-    # TODO: use "if" to create a PR to destination branch:
-    # "rc -> master -> bugfix" or "bugfix -> master -> rc"
     - name: syncing bugfix -> master -> rc
       uses: repo-sync/pull-request@v2
       if: ${{ github.event.pull_request.head.ref == 'bugfix' }}
