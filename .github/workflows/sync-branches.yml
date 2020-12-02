@@ -17,17 +17,17 @@ jobs:
     - name: debugging
       run: |
         echo "[debug] ref branch is '${{ github.ref }}'"
-        echo "[debug] base branch is '${{ github.base_ref }}'"
+        echo "[debug] base branch is '${{ github.event.pull_request.head.ref }}'"
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.base_ref }} # checkout on PR base branch ("bugfix", "master", "release-candidate")
     # TODO: use "if" to create a PR to destination branch:
     # "rc -> master -> bugfix" or "bugfix -> master -> rc"
-    - name: pull-request
-      uses: repo-sync/pull-request@v2
-      with:
-        destination_branch: "main"
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+    # - name: pull-request
+    #   uses: repo-sync/pull-request@v2
+    #   with:
+    #     destination_branch: "main"
+    #     github_token: ${{ secrets.GITHUB_TOKEN }}
 
     # - name: setup git config
     #   run: |
