@@ -1,3 +1,7 @@
+## 2.0.2 (2020-12-02 15:41:12 -0300)
+
+* (por "" em [#23](https://github.com/quero-edu/melhor_escola/pull/23))
+
 ## 2.0.1 (2020-12-02 12:41:50 -0300)
 
 * (por "" em [#22 21](https://github.com/quero-edu/melhor_escola/pull/22 21))
