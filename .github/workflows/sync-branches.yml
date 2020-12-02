@@ -7,7 +7,6 @@ on:
 # https://github.com/marketplace/actions/github-pull-request-action
 # master -> bugfix  -> bugfix-123 -> bugfix -> master -> rc
 # master -> rc      -> rc-123     -> rc     -> master -> bugfix
-
 jobs:
   sync-branches:
     # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
