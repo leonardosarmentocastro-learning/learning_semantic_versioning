@@ -29,9 +29,9 @@ jobs:
       with:
         destination_branch: "release-candidate"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: syncing bugfix -> master -> rc
+    - name: syncing release-candidate -> master -> bugfix
       uses: repo-sync/pull-request@v2
       if: ${{ github.event.pull_request.head.ref == 'release-candidate' }}
       with:
-        destination_branch: "candidate"
+        destination_branch: "bugfix"
         github_token: ${{ secrets.GITHUB_TOKEN }}
