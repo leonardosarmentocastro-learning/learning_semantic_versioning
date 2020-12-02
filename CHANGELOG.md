@@ -1,3 +1,7 @@
+## 5.3.0 (2020-12-02 17:55:47 -0300)
+
+* bump-and-tag.yml (por "Leonardo Sarmento de Castro" em [#32](https://github.com/quero-edu/melhor_escola/pull/32))
+
 ## 5.2.0 (2020-12-02 17:50:55 -0300)
 
 * sync-branches.yml (por "Leonardo Sarmento de Castro" em [#30](https://github.com/quero-edu/melhor_escola/pull/30))
