@@ -1,3 +1,23 @@
+## 6.0.0 (2020-12-02 17:41:59 -0300)
+
+* Release candidate (por "Leonardo Sarmento de Castro" em [#28](https://github.com/quero-edu/melhor_escola/pull/28))
+
+## 5.1.0 (2020-12-02 17:40:06 -0300)
+
+* CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#27](https://github.com/quero-edu/melhor_escola/pull/27))
+
+## 5.0.0 (2020-12-02 17:28:33 -0300)
+
+* PR sync-branches.yml (por "Leonardo Sarmento de Castro" em [#26](https://github.com/quero-edu/melhor_escola/pull/26))
+
+## 4.0.0 (2020-12-02 16:00:01 -0300)
+
+* PR sync-branches (por "Leonardo Sarmento de Castro" em [#25](https://github.com/quero-edu/melhor_escola/pull/25))
+
+## 3.0.0 (2020-12-02 15:48:57 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#24](https://github.com/quero-edu/melhor_escola/pull/24))
+
 
 ## 2.0.2 (2020-12-02 15:41:12 -0300)
 
@@ -58,4 +78,3 @@
 ## 1.0.1 (Novembro 23, 2020)
 
 * [KTB-0001] Feature 1 (@leonardo.castro em #1)
-
