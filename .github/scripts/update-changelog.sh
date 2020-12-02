@@ -18,6 +18,7 @@ echo "PR_NUMBER: $PR_NUMBER"
 
 # Add content to the beginning of "CHANGELOG.md" file.
 # NOTE: Every special character must be back-slashed (escaped).
+echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
 echo \* $PR_TITLE \(por \"$PR_AUTHOR\" em \[\#$PR_NUMBER\]\(https\:\/\/github.com\/quero\-edu/melhor\_escola/pull\/$PR_NUMBER\)\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
 echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
 echo \#\# $SEMANTIC_VERSION \($PR_MERGE_DATE\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
