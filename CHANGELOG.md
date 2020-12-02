@@ -1,3 +1,7 @@
+## Merge pull request #31 from leonardosarmentocastro-learning/release-candidate (2020-12-02 18:00:05 -0300)
+
+* Release candidate (por "Leonardo Sarmento de Castro" em [#31](https://github.com/quero-edu/melhor_escola/pull/31))
+
 ## 5.3.0 (2020-12-02 17:55:47 -0300)
 
 * bump-and-tag.yml (por "Leonardo Sarmento de Castro" em [#32](https://github.com/quero-edu/melhor_escola/pull/32))
