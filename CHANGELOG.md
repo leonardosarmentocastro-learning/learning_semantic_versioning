@@ -1,3 +1,7 @@
+## 1.15.0 (2020-12-02 12:00:16 -0300)
+
+* [PR] Feature/19 (por "Leonardo Sarmento de Castro" em [#20](https://github.com/quero-edu/melhor_escola/pull/20))
+
 ## 1.14.2 (2020-12-02 11:27:59 -0300)
 
 * feature/18 (por "Leonardo Sarmento de Castro" em [#19](https://github.com/quero-edu/melhor_escola/pull/19))
