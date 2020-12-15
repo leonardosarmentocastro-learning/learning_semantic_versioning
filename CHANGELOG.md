@@ -1,3 +1,11 @@
+## 5.5.2 (2020-12-15 11:33:08 -0300)
+
+* [KTB-150] Correção de bug (por "Leonardo Sarmento de Castro" em [#40](https://github.com/quero-edu/melhor_escola/pull/40))
+
+## 5.5.1 (2020-12-15 11:25:52 -0300)
+
+* Merge pull request #38 from leonardosarmentocastro-learning/release-candidate (por "Leonardo Sarmento de Castro" em [#39 38](https://github.com/quero-edu/melhor_escola/pull/39 38))
+
 ## 5.5.0 (2020-12-15 11:12:33 -0300)
 
 * [KTB-110] Adicionada nova funcionalidade (por "Leonardo Sarmento de Castro" em [#37](https://github.com/quero-edu/melhor_escola/pull/37))
