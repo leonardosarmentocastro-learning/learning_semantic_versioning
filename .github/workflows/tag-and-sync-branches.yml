@@ -89,13 +89,17 @@ jobs:
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub action"
 
+    - name: get latest changes on CHANGELOG.md
+      # https://stackoverflow.com/questions/55537602/read-file-until-regex-in-changelog-file-using-bash
+      run: echo ::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md)
+
     - name: syncing bugfix -> master -> release-candidate
       uses: repo-sync/pull-request@v2
       if: ${{ github.event.pull_request.head.ref == 'bugfix' }}
       with:
         destination_branch: "release-candidate"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        # pr_body: "TODO: bring lastest changelog topics"
+        pr_body: ${{ steps.vars.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -105,6 +109,6 @@ jobs:
       with:
         destination_branch: "bugfix"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        # pr_body: "TODO: bring lastest changelog topics"
+        pr_body: ${{ steps.vars.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
