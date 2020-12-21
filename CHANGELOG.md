@@ -1,3 +1,22 @@
+## 7.1.2 (2020-12-21 14:58:35 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#57](https://github.com/quero-edu/melhor_escola/pull/57))
+
+
+* BUGFIX 3 - PR TITLE (por "Leonardo Sarmento de Castro" em [#56](https://github.com/quero-edu/melhor_escola/pull/56))
+
+## 7.1.1 (2020-12-21 13:59:49 -0300)
+
+* B U G F I X: pr_title (por "Leonardo Sarmento de Castro" em [#54](https://github.com/quero-edu/melhor_escola/pull/54))
+
+* bf/1 (por "Leonardo Sarmento de Castro" em [#53](https://github.com/quero-edu/melhor_escola/pull/53))
+
+* CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#52](https://github.com/quero-edu/melhor_escola/pull/52))
+
+## 7.1.0 (2020-12-21 13:47:21 -0300)
+
+* tag-and-sync-branches.yml (por "Leonardo Sarmento de Castro" em [#51](https://github.com/quero-edu/melhor_escola/pull/51))
+
 * rc 2 (por "Leonardo Sarmento de Castro" em [#49](https://github.com/quero-edu/melhor_escola/pull/49))
 
 * script to update changelog (por "Leonardo Sarmento de Castro" em [#48](https://github.com/quero-edu/melhor_escola/pull/48))
