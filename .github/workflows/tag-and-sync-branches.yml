@@ -103,7 +103,10 @@ jobs:
       with:
         destination_branch: "release-candidate"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+        pr_body: |
+          # Alterações contempladas :pencil:
+
+          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -113,6 +116,9 @@ jobs:
       with:
         destination_branch: "bugfix"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+        pr_body: |
+          # Alterações contempladas :pencil:
+
+          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
