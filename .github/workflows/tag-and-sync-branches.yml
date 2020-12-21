@@ -90,9 +90,7 @@ jobs:
         git config --local user.name "GitHub action"
 
     - name: get latest changes on CHANGELOG.md
-      env:
-        CHANGELOG_LATEST_CHANGES: sed '1p;1,/^##/!d;/##/d' CHANGELOG.md
-      run: echo $CHANGELOG_LATEST_CHANGES
+      run: echo ::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md)
 
     - name: syncing bugfix -> master -> release-candidate
       uses: repo-sync/pull-request@v2
@@ -100,7 +98,7 @@ jobs:
       with:
         destination_branch: "release-candidate"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: echo ${{env.VERSION }}"
+        pr_body: ${{ steps.vars.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -110,6 +108,6 @@ jobs:
       with:
         destination_branch: "bugfix"
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        pr_body: echo ${{env.VERSION }}"
+        pr_body: ${{ steps.vars.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
