@@ -59,7 +59,7 @@ jobs:
         fi
 
     - name: update CHANGELOG.md file (printing version)
-      run: chmod +x .github/scripts/update-changelog.sh print-version && ./.github/scripts/update-changelog.sh
+      run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh print-version
 
     - name: push changes
       uses: ad-m/github-push-action@master
