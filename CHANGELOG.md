@@ -1,3 +1,7 @@
+* rc 3 (por "Leonardo Sarmento de Castro" em [#58](https://github.com/quero-edu/melhor_escola/pull/58))
+
+* syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#55](https://github.com/quero-edu/melhor_escola/pull/55))
+
 ## 7.1.2 (2020-12-21 14:58:35 -0300)
 
 * Bugfix (por "Leonardo Sarmento de Castro" em [#57](https://github.com/quero-edu/melhor_escola/pull/57))
