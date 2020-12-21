@@ -106,7 +106,7 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+          ${{ sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -119,6 +119,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+          ${{ sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
