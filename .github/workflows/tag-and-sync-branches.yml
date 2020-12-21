@@ -3,7 +3,7 @@
 ### 1. semantic versioning our code
 ### 2. update the CHANGELOG.md file as commits reaches one of the following branches
 ###    though merging pull requests: "bugfix" and "release-candidate".
-### 3. create a PR to sync "rc" and "bugfix" branches as new commits reaches master branch
+### 3. create a PR to sync "release-candidate" and "bugfix" branches as new commits reaches master branch
 ### master -> bugfix             -> bugfix-123             -> bugfix             -> master  -> release-candidate
 ### master -> release-candidate  -> release-candidate-123  -> release-candidate  -> master  -> bugfix
 #####
@@ -14,8 +14,11 @@ on:
     types: [ closed ]
 
 jobs:
-  sync-branches:
-    # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
+  ### 1. semantic versioning our code
+  ### 2. update the CHANGELOG.md file as commits reaches one of the following branches
+  ###    though merging pull requests: "bugfix" and "release-candidate".
+  bump-and-tag:
+  # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
     if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
     runs-on: ubuntu-latest
     steps:
@@ -55,8 +58,8 @@ jobs:
           npm version patch
         fi
 
-    - name: update CHANGELOG.md file
-      run: chmod +x .github/scripts/update-changelog.sh && ./.github/scripts/update-changelog.sh
+    - name: update CHANGELOG.md file (printing version)
+      run: chmod +x .github/scripts/update-changelog.sh print-version && ./.github/scripts/update-changelog.sh
 
     - name: push changes
       uses: ad-m/github-push-action@master
@@ -64,7 +67,29 @@ jobs:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         branch: ${{ github.ref }}
 
-    - name: syncing bugfix -> master -> rc
+  ### 3. create a PR to sync "release-candidate" and "bugfix" branches as new commits reaches master branch
+  sync-branches:
+    # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
+    if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
+    needs: bump-and-tag
+    runs-on: ubuntu-latest
+    steps:
+    - name: debugging
+      run: |
+        echo "[debug] ref branch is '${{ github.ref }}'"
+        echo "[debug] base branch is '${{ github.event.pull_request.head.ref }}'"
+
+    - name: checkout on "master" branch
+      uses: actions/checkout@v2
+      with:
+        ref: ${{ github.ref }}
+
+    - name: setup git config
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub action"
+
+    - name: syncing bugfix -> master -> release-candidate
       uses: repo-sync/pull-request@v2
       if: ${{ github.event.pull_request.head.ref == 'bugfix' }}
       with:
