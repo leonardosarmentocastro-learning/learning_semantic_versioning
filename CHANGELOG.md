@@ -1,4 +1,9 @@
+
 * BUGFIX 3 - PR TITLE (por "Leonardo Sarmento de Castro" em [#56](https://github.com/quero-edu/melhor_escola/pull/56))
+
+## 7.1.1 (2020-12-21 13:59:49 -0300)
+
+* B U G F I X: pr_title (por "Leonardo Sarmento de Castro" em [#54](https://github.com/quero-edu/melhor_escola/pull/54))
 
 * bf/1 (por "Leonardo Sarmento de Castro" em [#53](https://github.com/quero-edu/melhor_escola/pull/53))
 
