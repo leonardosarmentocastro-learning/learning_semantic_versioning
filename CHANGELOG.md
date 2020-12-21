@@ -1,3 +1,7 @@
+## 7.1.2 (2020-12-21 14:58:35 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#57](https://github.com/quero-edu/melhor_escola/pull/57))
+
 
 * BUGFIX 3 - PR TITLE (por "Leonardo Sarmento de Castro" em [#56](https://github.com/quero-edu/melhor_escola/pull/56))
 
