@@ -1,3 +1,5 @@
+* BUGFIX 3 - PR TITLE (por "Leonardo Sarmento de Castro" em [#56](https://github.com/quero-edu/melhor_escola/pull/56))
+
 * bf/1 (por "Leonardo Sarmento de Castro" em [#53](https://github.com/quero-edu/melhor_escola/pull/53))
 
 * CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#52](https://github.com/quero-edu/melhor_escola/pull/52))
