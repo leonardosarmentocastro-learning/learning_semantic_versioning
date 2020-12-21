@@ -1,3 +1,7 @@
+## 7.3.0 (2020-12-21 15:25:34 -0300)
+
+* RC PR_TITLE (por "Leonardo Sarmento de Castro" em [#65](https://github.com/quero-edu/melhor_escola/pull/65))
+
 * pr_body (por "Leonardo Sarmento de Castro" em [#64](https://github.com/quero-edu/melhor_escola/pull/64))
 
 * syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#63](https://github.com/quero-edu/melhor_escola/pull/63))
