@@ -90,6 +90,7 @@ jobs:
         git config --local user.name "GitHub action"
 
     - name: get latest changes on CHANGELOG.md
+      # https://stackoverflow.com/questions/55537602/read-file-until-regex-in-changelog-file-using-bash
       run: echo ::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md)
 
     - name: syncing bugfix -> master -> release-candidate
