@@ -1,3 +1,5 @@
+* rc 2 (por "Leonardo Sarmento de Castro" em [#49](https://github.com/quero-edu/melhor_escola/pull/49))
+
 * script to update changelog (por "Leonardo Sarmento de Castro" em [#48](https://github.com/quero-edu/melhor_escola/pull/48))
 
 ## 5.6.0 (2020-12-15 11:36:11 -0300)
