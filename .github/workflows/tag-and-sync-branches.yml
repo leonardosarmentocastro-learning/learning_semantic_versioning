@@ -95,6 +95,9 @@ jobs:
       with:
         destination_branch: "release-candidate"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        # pr_body: "TODO: bring lastest changelog topics"
+        pr_label: "syncing-branches"
+        pr_title: "syncing bugfix -> master -> release-candidate"
 
     - name: syncing release-candidate -> master -> bugfix
       uses: repo-sync/pull-request@v2
@@ -102,3 +105,6 @@ jobs:
       with:
         destination_branch: "bugfix"
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        # pr_body: "TODO: bring lastest changelog topics"
+        pr_label: "syncing-branches"
+        pr_title: "syncing release-candidate -> master -> bugfix"
