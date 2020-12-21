@@ -1,3 +1,7 @@
+## 7.1.0 (2020-12-21 13:47:21 -0300)
+
+* tag-and-sync-branches.yml (por "Leonardo Sarmento de Castro" em [#51](https://github.com/quero-edu/melhor_escola/pull/51))
+
 * rc 2 (por "Leonardo Sarmento de Castro" em [#49](https://github.com/quero-edu/melhor_escola/pull/49))
 
 * script to update changelog (por "Leonardo Sarmento de Castro" em [#48](https://github.com/quero-edu/melhor_escola/pull/48))
