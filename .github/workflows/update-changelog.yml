@@ -6,7 +6,7 @@ on:
     types: [ closed ]
 
 jobs:
-  bump-and-tag:
+  update-changelog:
     # https://github.community/t/trigger-workflow-only-on-pull-request-merge/17359
     if: github.event.pull_request.merged == true # run only when a PR has been merged (someone pushed the green button).
     runs-on: ubuntu-latest
