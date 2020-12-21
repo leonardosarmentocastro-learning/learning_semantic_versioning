@@ -1,3 +1,5 @@
+* pr_body (por "Leonardo Sarmento de Castro" em [#64](https://github.com/quero-edu/melhor_escola/pull/64))
+
 * syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#63](https://github.com/quero-edu/melhor_escola/pull/63))
 
 ## 7.2.1 (2020-12-21 15:13:50 -0300)
