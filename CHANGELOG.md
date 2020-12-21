@@ -1,3 +1,15 @@
+## 7.2.1 (2020-12-21 15:13:50 -0300)
+
+* BUGFIX: get_latest_changes (por "Leonardo Sarmento de Castro" em [#62](https://github.com/quero-edu/melhor_escola/pull/62))
+
+* BF4: get_latest_changes (por "Leonardo Sarmento de Castro" em [#61](https://github.com/quero-edu/melhor_escola/pull/61))
+
+* syncing release-candidate -> master -> bugfix (por "Leonardo Sarmento de Castro" em [#60](https://github.com/quero-edu/melhor_escola/pull/60))
+
+## 7.2.0 (2020-12-21 15:04:07 -0300)
+
+* rc3: feature 444 (por "Leonardo Sarmento de Castro" em [#59](https://github.com/quero-edu/melhor_escola/pull/59))
+
 * rc 3 (por "Leonardo Sarmento de Castro" em [#58](https://github.com/quero-edu/melhor_escola/pull/58))
 
 * syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#55](https://github.com/quero-edu/melhor_escola/pull/55))
