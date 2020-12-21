@@ -25,7 +25,7 @@ jobs:
         echo "[debug] base branch is '${{ github.event.pull_request.head.ref }}'"
 
     - name: checkout on "master" branch
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
 
