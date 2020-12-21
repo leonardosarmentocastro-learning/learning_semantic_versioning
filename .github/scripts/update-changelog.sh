@@ -31,8 +31,12 @@ echo "[debug] PR_NUMBER: $PR_NUMBER"
 # e.g. "http://" -> "http\:\/\/"
 echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md # empty line
 echo \* $PR_TITLE \(por \"$PR_AUTHOR\" em \[\#$PR_NUMBER\]\(https\:\/\/github.com\/quero\-edu/melhor\_escola/pull\/$PR_NUMBER\)\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
-echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md # empty line
-echo \#\# $SEMANTIC_VERSION \($PR_MERGE_DATE\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+
+# Optionally print the version as markdown title.
+if [ $1 == "print-version" ]; then
+  echo '' | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md # empty line
+  echo \#\# $SEMANTIC_VERSION \($PR_MERGE_DATE\) | cat - CHANGELOG.md > temp && mv temp CHANGELOG.md
+fi
 
 ### 4. stage changes to be commited
 git add CHANGELOG.md

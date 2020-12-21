@@ -1,3 +1,19 @@
+## 7.1.0 (2020-12-21 13:47:21 -0300)
+
+* tag-and-sync-branches.yml (por "Leonardo Sarmento de Castro" em [#51](https://github.com/quero-edu/melhor_escola/pull/51))
+
+* rc 2 (por "Leonardo Sarmento de Castro" em [#49](https://github.com/quero-edu/melhor_escola/pull/49))
+
+* script to update changelog (por "Leonardo Sarmento de Castro" em [#48](https://github.com/quero-edu/melhor_escola/pull/48))
+
+## 5.6.0 (2020-12-15 11:36:11 -0300)
+
+* Merge pull request #41 from leonardosarmentocastro-learning/bugfix (por "Leonardo Sarmento de Castro" em [#42 41](https://github.com/quero-edu/melhor_escola/pull/42 41))
+
+## 5.5.3 (2020-12-21 12:03:27 -0300)
+
+* Bugfix (por "Leonardo Sarmento de Castro" em [#46](https://github.com/quero-edu/melhor_escola/pull/46))
+
 ## 5.5.2 (2020-12-15 11:33:08 -0300)
 
 * [KTB-150] Correção de bug (por "Leonardo Sarmento de Castro" em [#40](https://github.com/quero-edu/melhor_escola/pull/40))
