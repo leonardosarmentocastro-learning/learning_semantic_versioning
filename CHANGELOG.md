@@ -1,3 +1,5 @@
+* bf/1 (por "Leonardo Sarmento de Castro" em [#53](https://github.com/quero-edu/melhor_escola/pull/53))
+
 * CHANGELOG.md (por "Leonardo Sarmento de Castro" em [#52](https://github.com/quero-edu/melhor_escola/pull/52))
 
 ## 7.1.0 (2020-12-21 13:47:21 -0300)
