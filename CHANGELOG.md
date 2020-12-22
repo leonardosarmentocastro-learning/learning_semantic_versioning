@@ -1,3 +1,28 @@
+## 7.3.2 (2020-12-22 00:00:08 -0300)
+
+* Bugfix: env (por "Leonardo Sarmento de Castro" em [#76](https://github.com/quero-edu/melhor_escola/pull/76))
+
+* env (por "Leonardo Sarmento de Castro" em [#75](https://github.com/quero-edu/melhor_escola/pull/75))
+
+* Bf/7 +1 (por "Leonardo Sarmento de Castro" em [#73](https://github.com/quero-edu/melhor_escola/pull/73))
+
+
+* bugfix: bf/7 (por "Leonardo Sarmento de Castro" em [#71](https://github.com/quero-edu/melhor_escola/pull/71))
+
+## 7.3.1 (2020-12-21 23:04:56 -0300)
+
+* Bugfix sed (por "Leonardo Sarmento de Castro" em [#70](https://github.com/quero-edu/melhor_escola/pull/70))
+
+* bf/6 (por "Leonardo Sarmento de Castro" em [#69](https://github.com/quero-edu/melhor_escola/pull/69))
+
+* bf/5: sed (por "Leonardo Sarmento de Castro" em [#67](https://github.com/quero-edu/melhor_escola/pull/67))
+
+* syncing release-candidate -> master -> bugfix (por "Leonardo Sarmento de Castro" em [#66](https://github.com/quero-edu/melhor_escola/pull/66))
+
+## 7.3.0 (2020-12-21 15:25:34 -0300)
+
+* RC PR_TITLE (por "Leonardo Sarmento de Castro" em [#65](https://github.com/quero-edu/melhor_escola/pull/65))
+
 * pr_body (por "Leonardo Sarmento de Castro" em [#64](https://github.com/quero-edu/melhor_escola/pull/64))
 
 * syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#63](https://github.com/quero-edu/melhor_escola/pull/63))

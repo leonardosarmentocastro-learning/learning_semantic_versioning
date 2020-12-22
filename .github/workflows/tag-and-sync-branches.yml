@@ -90,8 +90,15 @@ jobs:
         git config --local user.name "GitHub action"
 
     - name: get latest changes on CHANGELOG.md
+      # https://linuxconfig.org/add-character-to-the-beginning-of-each-line-using-sed
       # https://stackoverflow.com/questions/55537602/read-file-until-regex-in-changelog-file-using-bash
-      run: echo "::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md)"
+      # https://stackoverflow.com/a/6539865
+      # https://github.com/actions/starter-workflows/issues/68#issuecomment-592997170
+      # run: echo '::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)'
+      run: |
+        export CHANGELOG_LATEST_CHANGES=$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)
+        echo "LATEST_CHANGES=$(echo $CHANGELOG_LATEST_CHANGES)" >> $GITHUB_ENV
+        echo '::set-output name=changelog_latest_changes::$CHANGELOG_LATEST_CHANGES'
       id: get_latest_changes
     - name: debugging
       run: |
@@ -107,6 +114,8 @@ jobs:
           # Alterações contempladas :pencil:
 
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+          ---
+          ${{ env.LATEST_CHANGES }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -120,5 +129,7 @@ jobs:
           # Alterações contempladas :pencil:
 
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
+          ---
+          ${{ env.LATEST_CHANGES }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
