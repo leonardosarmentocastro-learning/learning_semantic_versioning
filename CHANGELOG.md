@@ -1,3 +1,7 @@
+## 7.3.2 (2020-12-22 00:00:08 -0300)
+
+* Bugfix: env (por "Leonardo Sarmento de Castro" em [#76](https://github.com/quero-edu/melhor_escola/pull/76))
+
 * env (por "Leonardo Sarmento de Castro" em [#75](https://github.com/quero-edu/melhor_escola/pull/75))
 
 * Bf/7 +1 (por "Leonardo Sarmento de Castro" em [#73](https://github.com/quero-edu/melhor_escola/pull/73))
