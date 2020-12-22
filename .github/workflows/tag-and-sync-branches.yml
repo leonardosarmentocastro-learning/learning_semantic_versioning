@@ -96,7 +96,7 @@ jobs:
       # https://github.com/actions/starter-workflows/issues/68#issuecomment-592997170
       # run: echo '::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)'
       run: |
-        CHANGELOG_LATEST_CHANGES=$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)
+        export CHANGELOG_LATEST_CHANGES=$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)
         echo "LATEST_CHANGES=$(echo $CHANGELOG_LATEST_CHANGES)" >> $GITHUB_ENV
         echo '::set-output name=changelog_latest_changes::$CHANGELOG_LATEST_CHANGES'
       id: get_latest_changes
@@ -113,8 +113,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ $CHANGELOG_LATEST_CHANGES }}
-          ---
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
           ${{ $LATEST_CHANGES }}
@@ -130,8 +128,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ $CHANGELOG_LATEST_CHANGES }}
-          ---
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
           ${{ $LATEST_CHANGES }}
