@@ -115,7 +115,7 @@ jobs:
 
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
-          ${{ $LATEST_CHANGES }}
+          ${{ env.LATEST_CHANGES }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -130,6 +130,6 @@ jobs:
 
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
-          ${{ $LATEST_CHANGES }}
+          ${{ env.LATEST_CHANGES }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
