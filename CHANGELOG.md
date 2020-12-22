@@ -1,3 +1,5 @@
+* Bf/7 +1 (por "Leonardo Sarmento de Castro" em [#73](https://github.com/quero-edu/melhor_escola/pull/73))
+
 
 * bugfix: bf/7 (por "Leonardo Sarmento de Castro" em [#71](https://github.com/quero-edu/melhor_escola/pull/71))
 
