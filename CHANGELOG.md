@@ -1,3 +1,5 @@
+* bugfix: bf/7 (por "Leonardo Sarmento de Castro" em [#71](https://github.com/quero-edu/melhor_escola/pull/71))
+
 * bf/6 (por "Leonardo Sarmento de Castro" em [#69](https://github.com/quero-edu/melhor_escola/pull/69))
 
 * bf/5: sed (por "Leonardo Sarmento de Castro" em [#67](https://github.com/quero-edu/melhor_escola/pull/67))
