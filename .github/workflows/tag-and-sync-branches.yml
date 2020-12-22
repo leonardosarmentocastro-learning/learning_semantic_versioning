@@ -93,7 +93,7 @@ jobs:
       # https://linuxconfig.org/add-character-to-the-beginning-of-each-line-using-sed
       # https://stackoverflow.com/questions/55537602/read-file-until-regex-in-changelog-file-using-bash
       # https://stackoverflow.com/a/6539865
-      run: echo "::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "/n" -)"
+      run: echo '::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)'
       id: get_latest_changes
     - name: debugging
       run: |
