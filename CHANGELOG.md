@@ -1,3 +1,5 @@
+* bf/6 (por "Leonardo Sarmento de Castro" em [#69](https://github.com/quero-edu/melhor_escola/pull/69))
+
 * bf/5: sed (por "Leonardo Sarmento de Castro" em [#67](https://github.com/quero-edu/melhor_escola/pull/67))
 
 * syncing release-candidate -> master -> bugfix (por "Leonardo Sarmento de Castro" em [#66](https://github.com/quero-edu/melhor_escola/pull/66))
