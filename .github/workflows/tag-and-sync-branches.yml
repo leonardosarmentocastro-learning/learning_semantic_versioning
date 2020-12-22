@@ -113,8 +113,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ $CHANGELOG_LATEST_CHANGES }}
-          ---
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
           ${{ $LATEST_CHANGES }}
@@ -130,8 +128,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ $CHANGELOG_LATEST_CHANGES }}
-          ---
           ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
           ---
           ${{ $LATEST_CHANGES }}
