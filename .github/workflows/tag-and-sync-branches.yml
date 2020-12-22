@@ -90,8 +90,10 @@ jobs:
         git config --local user.name "GitHub action"
 
     - name: get latest changes on CHANGELOG.md
+      # https://linuxconfig.org/add-character-to-the-beginning-of-each-line-using-sed
       # https://stackoverflow.com/questions/55537602/read-file-until-regex-in-changelog-file-using-bash
-      run: echo "::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md)"
+      # https://stackoverflow.com/a/6539865
+      run: echo '::set-output name=changelog_latest_changes::$(sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md | paste -sd "\\\n" -)'
       id: get_latest_changes
     - name: debugging
       run: |
@@ -106,7 +108,7 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md }}
+          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing bugfix -> master -> release-candidate"
 
@@ -119,6 +121,6 @@ jobs:
         pr_body: |
           # Alterações contempladas :pencil:
 
-          ${{ sed '1p;1,/^##/!d;/##/d' ./CHANGELOG.md }}
+          ${{ steps.get_latest_changes.outputs.changelog_latest_changes }}
         pr_label: "syncing-branches"
         pr_title: "syncing release-candidate -> master -> bugfix"
