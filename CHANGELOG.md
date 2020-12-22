@@ -1,3 +1,6 @@
+
+* bugfix: bf/7 (por "Leonardo Sarmento de Castro" em [#71](https://github.com/quero-edu/melhor_escola/pull/71))
+
 ## 7.3.1 (2020-12-21 23:04:56 -0300)
 
 * Bugfix sed (por "Leonardo Sarmento de Castro" em [#70](https://github.com/quero-edu/melhor_escola/pull/70))
