@@ -1,3 +1,5 @@
+* syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#80](https://github.com/quero-edu/melhor_escola/pull/80))
+
 ## 7.3.3 (2021-01-06 13:49:04 -0300)
 
 * bugfix -> master (por "Leonardo Sarmento de Castro" em [#79](https://github.com/quero-edu/melhor_escola/pull/79))
