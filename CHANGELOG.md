@@ -1,3 +1,9 @@
+## 7.3.3 (2021-01-06 13:49:04 -0300)
+
+* bugfix -> master (por "Leonardo Sarmento de Castro" em [#79](https://github.com/quero-edu/melhor_escola/pull/79))
+
+* [KTB-10] ajuste 10 (por "Leonardo Sarmento de Castro" em [#78](https://github.com/quero-edu/melhor_escola/pull/78))
+
 * syncing bugfix -> master -> release-candidate (por "Leonardo Sarmento de Castro" em [#77](https://github.com/quero-edu/melhor_escola/pull/77))
 
 ## 7.3.2 (2020-12-22 00:00:08 -0300)
