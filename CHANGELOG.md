@@ -1,3 +1,5 @@
+* [KTB-10] ajuste 10 (por "Leonardo Sarmento de Castro" em [#78](https://github.com/quero-edu/melhor_escola/pull/78))
+
 * env (por "Leonardo Sarmento de Castro" em [#75](https://github.com/quero-edu/melhor_escola/pull/75))
 
 * Bf/7 +1 (por "Leonardo Sarmento de Castro" em [#73](https://github.com/quero-edu/melhor_escola/pull/73))
