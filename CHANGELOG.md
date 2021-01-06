@@ -1,3 +1,5 @@
+* [KTB-10] ajuste 10 (por "Leonardo Sarmento de Castro" em [#78](https://github.com/quero-edu/melhor_escola/pull/78))
+
 ## 7.3.2 (2020-12-22 00:00:08 -0300)
 
 * Bugfix: env (por "Leonardo Sarmento de Castro" em [#76](https://github.com/quero-edu/melhor_escola/pull/76))
